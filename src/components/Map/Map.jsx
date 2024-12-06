@@ -10,8 +10,8 @@ import {
 
 import "leaflet/dist/leaflet.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import useGeoLocation from "../hooks/useGeoLocation";
-import useUrlLocation from "../hooks/useUrlLocation";
+import useGeoLocation from "../../hooks/useGeoLocation";
+import useUrlLocation from "../../hooks/useUrlLocation";
 
 function Map({ markerLocations }) {
   const [mapCenter, setMapCenter] = useState([20, 4]);
@@ -68,7 +68,8 @@ function ChangeCenter({ position }) {
 function DetectClick() {
   const navigate = useNavigate();
   useMapEvent({
-    click: (e) => navigate(`/bookMark?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+    click: (e) =>
+      navigate(`/bookMark/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
   });
   return null;
 }

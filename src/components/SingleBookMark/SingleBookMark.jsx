@@ -5,12 +5,11 @@ import { useNavigate, useParams } from "react-router-dom";
 function SingleBookMark() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { getBookMark, currentBookMark, isLoadingCurrentBookMark } =
-    useBookMark();
+  const { getBookMark, currentBookMark, isLoading } = useBookMark();
   useEffect(() => {
     getBookMark(id);
   }, [id]);
-  if (isLoadingCurrentBookMark || !currentBookMark) return <>Loading ...</>;
+  if (isLoading || !currentBookMark) return <>Loading ...</>;
   return (
     <div>
       <button onClick={() => navigate(-1)} className="btn btn--back">

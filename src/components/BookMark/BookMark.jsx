@@ -2,11 +2,10 @@ import ReactCountryFlag from "react-country-flag";
 import { useBookMark } from "../context/BookMarkContextProvaider";
 import { Link } from "react-router-dom";
 
-function BookMark() {
-  const { isLoadingCurrentBookMark, bookmarks, currentBookMark } =
-    useBookMark();
+function Bookmark() {
+  const { isLoading, bookmarks, currentBookMark } = useBookMark();
 
-  if (isLoadingCurrentBookMark) return <>Loading ...</>;
+  if (isLoading) return <>Loading ...</>;
   return (
     <div>
       <h2>BookMark List</h2>
@@ -34,4 +33,4 @@ function BookMark() {
   );
 }
 
-export default BookMark;
+export default Bookmark;
