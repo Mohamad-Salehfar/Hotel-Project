@@ -9,7 +9,7 @@ import {
 } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useGeoLocation from "../../hooks/useGeoLocation";
 import useUrlLocation from "../../hooks/useUrlLocation";
 
@@ -19,7 +19,6 @@ function Map({ markerLocations }) {
   const {
     isLoading: isLoadingLocation,
     position: geoLocationPosition,
-    error,
     getPosition,
   } = useGeoLocation();
   // console.log(hotels);
